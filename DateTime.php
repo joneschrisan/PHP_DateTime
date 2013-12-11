@@ -10,9 +10,16 @@
 
 /********************
  *
- * __construct(String datetime [, Array working_days [, Array holidays]])
+ * __construct([String datetime [, Array working_days [, Array holidays]]])
  * 
  * datetime is a datetime string in sql datetime format (YYYY-mm-dd HH:mm:ss) Default null
+ *
+ * __construct([Integer timestamp [, Array working_days [, Array holidays]]])
+ *
+ * timestamp is a unix timestamp integer Default null
+ *
+ * If no datetime or timestamp is given then the date and time of the server at the instance of the
+ *   object will be used.
  *  
  *  working_days is an array of numbers:
  *   1: Monday
@@ -55,7 +62,12 @@ class DateTime extends \DateTime {
         if($date === null) {
             parent::__construct();
         } else {
-            parent::__construct($date);
+            if(is_integer($date)) {
+                parent::__construct();
+                $this->from_unix_time($date);
+            } else {
+                parent::__construct($date);
+            }
         }
         
         if($working_days !== null) $this->working_days = $working_days;
@@ -88,6 +100,10 @@ class DateTime extends \DateTime {
         
         if($returns !== null)
             return $this->format($returns);
+    }
+    
+    public function from_unix_time($unix_timestamp) {
+        $this->setTimestamp(1356609600);
     }
 }
 
