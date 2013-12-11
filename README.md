@@ -8,6 +8,10 @@ Extra functionality for PHP's DateTime class
         <td>
             <h6>__construct(String datetime [, Array working_days [, Array holidays]])</h6>
             datetime is a datetime string in sql datetime format (YYYY-mm-dd HH:mm:ss) Default null<br />
+            <h6>__construct([Integer timestamp [, Array working_days [, Array holidays]]])</h6>
+            timestamp is a unix timestamp integer Default null<br />
+            If no datetime or timestamp is given then the date and time of the server at the instance of the<br />
+            object will be used.
             working_days is an array of numbers:
             <table>
                 <tr>
