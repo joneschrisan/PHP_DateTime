@@ -6,7 +6,7 @@ Extra functionality for PHP's DateTime class
 <table>
     <tr>
         <td>
-            <h6>__construct(String datetime [, Array working_days [, Array holidays]])</h6>
+            <h6>__construct([String datetime [, Array working_days [, Array holidays]]])</h6>
             datetime is a datetime string in sql datetime format (YYYY-mm-dd HH:mm:ss) Default null<br />
             <h6>__construct([Integer timestamp [, Array working_days [, Array holidays]]])</h6>
             timestamp is a unix timestamp integer Default null<br />
