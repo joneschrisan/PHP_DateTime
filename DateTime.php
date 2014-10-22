@@ -60,7 +60,7 @@ class DateTime extends \DateTime {
     
     public function __construct($date = null, $working_days = null, $holidays = null) {
         if($date === null) {
-            if(USE_DATABASE_TIME) {
+            if(USE_DATABASE_TIME && $GLOBALS['dbh']) {
                 $row = mysql_fetch_assoc($GLOBALS['dbh']->mysql_query("select now() as datetime"));
                 parent::__construct($row['datetime']);
             } else {
