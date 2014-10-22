@@ -12,7 +12,7 @@ Extra functionality for PHP's DateTime class
             timestamp is a unix timestamp integer Default null<br />
             <br />
             <i>If no datetime or timestamp is given then the date and time of the server at the instance of the<br />
-            object will be used.</i><br />
+            object will be used. If $GLOBALS['dbh'] holds a valid database handle and a defined var of USE_DATABASE_TME              is set to 'True' then the database time of 'now()' will be used.</i><br />
             <br />
             working_days is an array of numbers:
             <table>
