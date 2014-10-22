@@ -19,7 +19,8 @@
  * timestamp is a unix timestamp integer Default null
  *
  * If no datetime or timestamp is given then the date and time of the server at the instance of the
- *   object will be used.
+ *   object will be used. If $GLOBALS['dbh'] holds a valid database handle and a defined var of
+ *   USE_DATABASE_TME is set to 'True' then the database time of 'now()' will be used.
  *  
  *  working_days is an array of numbers:
  *   1: Monday
